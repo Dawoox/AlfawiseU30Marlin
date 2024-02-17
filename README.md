@@ -1,6 +1,7 @@
 # Marlin configuration for an Alfawise U30
 
 This is my config for my modded Alfawise U30 running Marlin.
+Current version is made for Marlin version **2.1.2.1**
 
 ### List of mods applied to the printer
 
