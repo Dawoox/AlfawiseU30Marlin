@@ -175,24 +175,24 @@
 //#define BLUETOOTH
 
 // Name displayed in the LCD "Ready" message and Info menu
-//#define CUSTOM_MACHINE_NAME "3D Printer"
-#if ENABLED(U20)
-  #define CUSTOM_MACHINE_NAME "Alfawise U20"
-#elif ENABLED(U30)
-  #define CUSTOM_MACHINE_NAME "Alfawise U30"
-#elif ENABLED(U20_PLUS)
-  #define CUSTOM_MACHINE_NAME "Alfawise U20+"
-#elif ENABLED(LK1)
-  #define CUSTOM_MACHINE_NAME "Longer3D LK1"
-#elif ENABLED(LK1_PLUS)
-  #define CUSTOM_MACHINE_NAME "Longer3D LK1+"
-#elif ENABLED(LK2)
-  #define CUSTOM_MACHINE_NAME "Longer3D LK2"
-#elif ENABLED(LK4)
-  #define CUSTOM_MACHINE_NAME "Longer3D LK4"
-#else
-  #error "Please specify U20, U20_PLUS, U30, LK1, LK1_PLUS, LK2, or LK4."
-#endif
+#define CUSTOM_MACHINE_NAME "Alfawise U30-X"
+//#if ENABLED(U20)
+//  #define CUSTOM_MACHINE_NAME "Alfawise U20"
+//#elif ENABLED(U30)
+//  #define CUSTOM_MACHINE_NAME "Alfawise U30"
+//#elif ENABLED(U20_PLUS)
+//  #define CUSTOM_MACHINE_NAME "Alfawise U20+"
+//#elif ENABLED(LK1)
+//  #define CUSTOM_MACHINE_NAME "Longer3D LK1"
+//#elif ENABLED(LK1_PLUS)
+//  #define CUSTOM_MACHINE_NAME "Longer3D LK1+"
+//#elif ENABLED(LK2)
+//  #define CUSTOM_MACHINE_NAME "Longer3D LK2"
+//#elif ENABLED(LK4)
+//  #define CUSTOM_MACHINE_NAME "Longer3D LK4"
+//#else
+//  #error "Please specify U20, U20_PLUS, U30, LK1, LK1_PLUS, LK2, or LK4."
+//#endif
 
 // Printer's unique ID, used by some programs to differentiate between machines.
 // Choose your own or use a service like https://www.uuidgenerator.net/version4
@@ -1554,11 +1554,11 @@
  *     |    [-]    |
  *     O-- FRONT --+
  */
-#define NOZZLE_TO_PROBE_OFFSET { -43, 0, 0 }
+#define NOZZLE_TO_PROBE_OFFSET { -43, 0, -1.81 }
 
 // Most probes should stay away from the edges of the bed, but
 // with NOZZLE_AS_PROBE this can be negative for a wider probing area.
-#define PROBING_MARGIN 10
+#define PROBING_MARGIN 13
 
 // X and Y axis travel speed (mm/min) between probes
 #define XY_PROBE_FEEDRATE (80*60)
@@ -1954,8 +1954,8 @@
  */
 //#define AUTO_BED_LEVELING_3POINT
 //#define AUTO_BED_LEVELING_LINEAR
-#define AUTO_BED_LEVELING_BILINEAR
-//#define AUTO_BED_LEVELING_UBL
+//#define AUTO_BED_LEVELING_BILINEAR
+#define AUTO_BED_LEVELING_UBL
 //#define MESH_BED_LEVELING
 
 /**
@@ -2066,11 +2066,11 @@
 
   //#define MESH_EDIT_GFX_OVERLAY   // Display a graphics overlay while editing the mesh
 
-  #define MESH_INSET 5              // Set Mesh bounds as an inset region of the bed
-  #define GRID_MAX_POINTS_X 5       // Don't use more than 15 points per axis, implementation limited.
+  #define MESH_INSET 8              // Set Mesh bounds as an inset region of the bed
+  #define GRID_MAX_POINTS_X 10       // Don't use more than 15 points per axis, implementation limited.
   #define GRID_MAX_POINTS_Y GRID_MAX_POINTS_X
 
-  //#define UBL_HILBERT_CURVE       // Use Hilbert distribution for less travel when probing multiple points
+  #define UBL_HILBERT_CURVE       // Use Hilbert distribution for less travel when probing multiple points
 
   #define UBL_MESH_EDIT_MOVES_Z     // Sophisticated users prefer no movement of nozzle
   #define UBL_SAVE_ACTIVE_ON_M500   // Save the currently active mesh in the current slot on M500
